@@ -1,4 +1,3 @@
-import React from 'react'
 import HubSummaryDesignerRevamp from './HubSummaryDesignerRevamp'
 
 function App() {
