@@ -1,5 +1,5 @@
 import * as React from "react"
-import type { DialogProps } from "@radix-ui/react-dialog" // This is often used, but we are making a simpler one to avoid heavy deps if possible, or use standard pattern.
+
 import { cn } from "@/lib/utils"
 // We'll use a simple implementation if Radix isn't installed, but typically shadcn/ui uses radix.
 // Since we don't have radix installed in package.json from the first step, we should implement a pure React Version 

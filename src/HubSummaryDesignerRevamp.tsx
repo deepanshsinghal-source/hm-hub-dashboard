@@ -499,7 +499,7 @@ export default function HubSummaryDesignerRevamp() {
                                 <div className="flex gap-1 bg-slate-100 p-1 rounded-lg">
                                     {([{ k: "upcoming", l: "Upcoming" }, { k: "ongoing", l: "Ongoing" }, { k: "cancelled", l: "Cancelled" }, { k: "completed", l: "Completed" }] as any[]).map((t) => (
                                         <button key={t.k} onClick={() => setHtdFilter(t.k)} className={cx("px-3 py-1 rounded-md text-xs font-semibold", htdFilter === t.k ? "bg-white shadow text-slate-900" : "text-slate-500 hover:text-slate-900")}>
-                                            {t.l} <span className="ml-1 opacity-60">({htdCounts[t.k]})</span>
+                                            {t.l} <span className="ml-1 opacity-60">({htdCounts[t.k as HTDStage]})</span>
                                         </button>
                                     ))}
                                 </div>
@@ -591,7 +591,7 @@ export default function HubSummaryDesignerRevamp() {
                                             <tr key={rm.id} className="group hover:bg-slate-50">
                                                 <td className="px-4 py-3 font-semibold text-slate-900">{rm.name}</td>
                                                 <td className="px-4 py-3">
-                                                    <Badge variant="secondary" className="mr-2">{rm.now}</Badge>
+                                                    <Badge className="mr-2 bg-slate-100 text-slate-800 hover:bg-slate-200">{rm.now}</Badge>
                                                     <span className="text-slate-600">{rm.customer || '—'}</span>
                                                 </td>
                                                 <td className="px-4 py-3 text-slate-600">{fmtRuntime(rm.runtime)}</td>
