@@ -316,7 +316,7 @@ export default function HubSummaryDesignerRevamp() {
     const [dateISO, setDateISO] = useState(todayISO);
     const [scope, setScope] = useState<Scope>("ALL");
     const [focusStatus, setFocusStatus] = useState<FocusStatus>("ALL");
-    const [visitsOpen, setVisitsOpen] = useState(true);
+    // const [visitsOpen, setVisitsOpen] = useState(true); // Unused
     const [rangeKey, setRangeKey] = useState<RangeKey>("1D");
     const [customStartISO, setCustomStartISO] = useState(todayISO);
     const [feedbackView, setFeedbackView] = useState<FeedbackView>("HUB");
@@ -918,7 +918,7 @@ export default function HubSummaryDesignerRevamp() {
 
                                 {/* RM List for Dispatch Planning */}
                                 <div className="space-y-2 max-h-[300px] overflow-y-auto pr-1">
-                                    {rmComputed.slice().sort((a, b) => (a.now === 'IDLE' ? -1 : 1)).map(rm => (
+                                    {rmComputed.slice().sort((a, _b) => (a.now === 'IDLE' ? -1 : 1)).map(rm => (
                                         <div onClick={() => setOpenRM(rm as any)} key={rm.id} className={cx("p-2 rounded-lg border flex items-center justify-between cursor-pointer hover:border-slate-300 transition-colors", rm.now === 'IDLE' ? "bg-white border-emerald-100 shadow-sm" : "bg-slate-50 border-slate-100 opacity-80")}>
                                             <div className="flex items-center gap-2">
                                                 <div className={cx("h-2 w-2 rounded-full", rm.now === 'IDLE' ? "bg-emerald-500" : "bg-slate-300")} />
